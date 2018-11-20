@@ -30,6 +30,10 @@
 |user_id|integer|null: false, foreign_key: true, index: true|
 |group_id|integer|null: false, foreign_key: true, index: true|
 
+### Association
+- belongs_to :user
+- belongs_to :group
+
 
 ## usersテーブル
 |Column|Type|Options|
