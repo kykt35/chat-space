@@ -22,3 +22,9 @@
 
 
 ## usersテーブル
+|Column|Type|Options|
+|--------|-------|-------------|
+|name|string|null: false, unique: true|
+|email|string|null: false, unique: true, index: true|
+|password|string|null: false|
+|member_id|integer|foreign_key: true|
