@@ -42,3 +42,7 @@
 |email|string|null: false, unique: true, index: true|
 |password|string|null: false|
 |member_id|integer|foreign_key: true|
+
+### Association
+- has_many :groups, through: :members
+- has_many :messages
