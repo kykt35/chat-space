@@ -17,19 +17,20 @@
 |Column|Type|Options|
 |--------|-------|-------------|
 |name|string|null: false|
-|message_id|integer|null: false, foreign_key: true|
-|member_id|integer|null: false, foreign_key: true|
+|message_id|references|null: false, foreign_key: true|
+|member_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :users, through: :members
 - has_many :messages
+- has_many :members
 
 
 ## membersテーブル
 |Column|Type|Options|
 |--------|-------|-------------|
-|user_id|integer|null: false, foreign_key: true, index: true|
-|group_id|integer|null: false, foreign_key: true, index: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -39,11 +40,12 @@
 ## usersテーブル
 |Column|Type|Options|
 |--------|-------|-------------|
-|name|string|null: false, unique: true|
-|email|string|null: false, unique: true, index: true|
+|name|string|null: false, unique: true, index: true|
+|email|string|null: false, unique: true|
 |password|string|null: false|
-|member_id|integer|foreign_key: true|
+|member_id|references|foreign_key: true|
 
 ### Association
 - has_many :groups, through: :members
 - has_many :messages
+- has_many :members
