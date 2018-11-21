@@ -1,0 +1,33 @@
+current directory: /Users/kiyotada/projects2/chat-space/vendor/bundle/gems/unicorn-5.4.1/ext/unicorn_http
+/Users/kiyotada/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20181121-6215-6288rx.rb extconf.rb
+checking for SIZEOF_OFF_T in ruby.h... yes
+checking for SIZEOF_SIZE_T in ruby.h... yes
+checking for SIZEOF_LONG in ruby.h... yes
+checking for rb_str_set_len() in ruby.h... yes
+checking for rb_hash_clear() in ruby.h... yes
+checking for gmtime_r() in time.h... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/kiyotada/projects2/chat-space/vendor/bundle/extensions/x86_64-darwin-17/2.3.0-static/unicorn-5.4.1/mkmf.log
+
+current directory: /Users/kiyotada/projects2/chat-space/vendor/bundle/gems/unicorn-5.4.1/ext/unicorn_http
+make "DESTDIR=" clean
+
+current directory: /Users/kiyotada/projects2/chat-space/vendor/bundle/gems/unicorn-5.4.1/ext/unicorn_http
+make "DESTDIR="
+compiling httpdate.c
+compiling unicorn_http.c
+unicorn_http.c:301:18: warning: unused variable 'http_parser_en_ChunkedBody_chunk_chunk_end' [-Wunused-const-variable]
+static const int http_parser_en_ChunkedBody_chunk_chunk_end = 105;
+                 ^
+unicorn_http.c:303:18: warning: unused variable 'http_parser_en_main' [-Wunused-const-variable]
+static const int http_parser_en_main = 1;
+                 ^
+2 warnings generated.
+linking shared-object unicorn_http.bundle
+
+current directory: /Users/kiyotada/projects2/chat-space/vendor/bundle/gems/unicorn-5.4.1/ext/unicorn_http
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 unicorn_http.bundle ./.gem.20181121-6215-1nwjzea
