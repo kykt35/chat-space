@@ -91,11 +91,30 @@
     }
   }
   .message-form {
-    padding: 0 40px;
+
     width: 100%;
+    height: 90px;
     position: absolute;
     left: 0;
     bottom: 0;
     background-color: #dddddd;
+    &__textarea {
+      padding-left:10px;
+      height: 50px;
+      line-height: 50px;
+      width: calc(100% - 150px - 105px);
+      float: left;
+      margin: 20px auto;
+      resize: none;
+    }
+    &__button {
+      color: #ffffff;
+      background-color: #38aef0;
+      height: 50px;
+      width: 150px;
+     margin: 20px 40px;
+      padding:0 20px;
+      float: right;
+    }
   }
 }

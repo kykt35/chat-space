@@ -33,7 +33,7 @@
           %p.message__created-at 2018/11/22 05:33:25
           %p.message__body texttexttext22
           .message__image
-    .message-form
-      %textarea{placeholder: "type a message", name: "text", cols: "1" }
-      %a.messsageForm__imageIcon img
-      %input{type: "button"} Send
+    %form.message-form
+      %textarea.message-form__textarea{placeholder: "type a message", name: "text", cols: "1" }
+      / %a.messageForm__imageIcon
+      %input.message-form__button{type: "button", name: "submit",value: "Send"}
