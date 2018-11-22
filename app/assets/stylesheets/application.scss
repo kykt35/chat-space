@@ -17,11 +17,19 @@
       line-height: 96px;
     }
   }
-  li.chat-group {
-    padding:0 20px;
+  .chat-groups{
+    .chat-group {
+      padding:20px 20px;
+      &__name{
+        font-size: 15px;
+        padding-bottom: 5px;
+      }
+      &__message{
+        font-size: 11px;
+      }
+    }
+
   }
-
-
 
 }
 
