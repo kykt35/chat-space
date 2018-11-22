@@ -104,7 +104,9 @@
       line-height: 50px;
       width: calc(100% - 150px - 105px);
       float: left;
-      margin: 20px auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 20px;
       resize: none;
     }
     &__button {
@@ -112,7 +114,9 @@
       background-color: #38aef0;
       height: 50px;
       width: 150px;
-     margin: 20px 40px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-right: 40px;
       padding:0 20px;
       float: right;
     }
