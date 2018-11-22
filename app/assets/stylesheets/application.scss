@@ -14,17 +14,26 @@
     &__name{
       font-size: 16px;
       font-weight: bold;
-      line-height: 96px;
+      line-height: 100px;
     }
   }
+
   .chat-groups{
     .chat-group {
-      padding:20px 20px;
+        &:hover{
+          background-color: #3b4a60;
+        }
+      &__link{
+        text-decoration: none;
+        color: #ffffff;
+      }
       &__name{
+        padding: 20px 20px 0;
         font-size: 15px;
         padding-bottom: 5px;
       }
       &__message{
+        padding: 5px 20px 20px;
         font-size: 11px;
       }
     }
@@ -32,6 +41,7 @@
   }
 
 }
+
 
 .main {
   width: calc(100vw - 300px);
