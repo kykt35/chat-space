@@ -9,7 +9,13 @@
   background-color: #2f3e51;
   .user {
     padding:0 20px;
+    height: 96px;
     background-color: #253141;
+    &__name{
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 96px;
+    }
   }
   li.chat-group {
     padding:0 20px;
@@ -28,6 +34,7 @@
 
   .chat-group {
     padding: 0 40px;
+    height: 96px;
     background-color: #ffffff;
     border-bottom : 1px solid #eeeeee;
   }
