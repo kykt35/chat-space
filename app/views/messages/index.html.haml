@@ -1,28 +1,34 @@
 .wrapper
   .flash
-  .sidebar
-    .userInfo
-      %h2.userInfo__name username
-      %a.userInfo__createGroup
-      %a.userInfo__Edit Edit
-    .groupLists
-      %ul
-        %li.groupLists__list group1
-        %li.groupLists__list group2
-        %li.groupLists__list group3
+  .side
+    .user
+      %h2.user__name username
+      %a.user__createGroup
+      %a.user__Edit Edit
+    %ul.chat-groups
+      %li.chat-group
+        %p.chat-group__name group1
+        %p.chat-group__message message11
+      %li.chat-group
+        %p.chat-group__name group2
+        %p.chat-group__message message22
+      %li.chat-group
+        %p.chat-group__name group3
+        %p.chat-group__message message33
   .main
-    .groupInfo
-      .groupInfo__info
-        %h2.groupname GroupName
-        %p.members member1 member2
-      %a.groupInfo__groupEdit
+    .chat-group
+      .groupInfo
+        %h2.groupInfo__groupname GroupName
+        %p.groupInfo__members Members: member1 member2
+      %a.groupInfo__edit edit
     .messageView
-      %ul
-        %li
-          %p.username username
-          %p.datetime 2018/11/22 05:33:24
-          %p.body texttexttext
-          .image
-    .messsageForm
-      %textarea{placeholder: "Image Url", name: "text",ros: "80", cols: "1" ,}
+      %ul.messages
+        %li.message
+          %p.message__username username
+          %p.message__created-at 2018/11/22 05:33:24
+          %p.message__body texttexttext
+          .message__image
+    .messageForm
+      %textarea{placeholder: "type a message", name: "text", cols: "1" }
+      %a.messsageForm__imageIcon img
       %input{type: "button"} Send
