@@ -1,5 +1,6 @@
 @import "./reset";
 @import "./variable";
+@import "font-awesome";
 
 .wrapper {
   min-width: 960px;
@@ -15,6 +16,7 @@
     height: 100px;
     background-color: #253141;
     &__name{
+      display: inline;
       font-size: 16px;
       font-weight: bold;
       line-height: 100px;
