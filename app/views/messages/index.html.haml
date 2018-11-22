@@ -2,14 +2,14 @@
   .flash
   .sidebar
     .userInfo
-      %h2.userInfo__name
+      %h2.userInfo__name username
       %a.userInfo__createGroup
-      %a.userInfo__Edit
+      %a.userInfo__Edit Edit
     .groupLists
       %ul
-        %li.groupLists__list
-        %li.groupLists__list
-        %li.groupLists__list
+        %li.groupLists__list group1
+        %li.groupLists__list group2
+        %li.groupLists__list group3
   .main
     .groupInfo
       .groupInfo__info
@@ -19,10 +19,10 @@
     .messageView
       %ul
         %li
-          %p.username
-          %p.datetime
-          %p.body
+          %p.username username
+          %p.datetime 2018/11/22 05:33:24
+          %p.body texttexttext
           .image
     .messsageForm
-      %textarea{ros: 80, col: 1 }
-      %input{type: "button"}
+      %textarea{placeholder: "Image Url", name: "text",ros: "80", cols: "1" ,}
+      %input{type: "button"} Send
