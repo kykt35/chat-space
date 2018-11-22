@@ -18,11 +18,13 @@
 .main {
   width: calc(100vw - 300px);
   height: 100vh;
-
+  position: relative;
   float: right;
+  background-color: #fafafa;
 
   .chat-group {
     padding: 0 40px;
+    background-color: #ffffff;
     border-bottom : 1px solid #eeeeee;
   }
   .message-view {
@@ -31,7 +33,10 @@
   }
   .message-form {
     padding: 0 40px;
-
-    background-color: #aaaaaa;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #dddddd;
   }
 }
