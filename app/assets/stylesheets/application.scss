@@ -2,11 +2,8 @@
 @import "./variable";
 @import "font-awesome";
 
+@import "./wrapper";
 @import "./side";
 @import "./main";
 @import "./flash";
 
-.wrapper {
-  min-width: 960px;
-  height: calc(100vh - 20px);
-}
