@@ -28,7 +28,7 @@
       line-height: 100px;
     }
   }
-  .chat-groups{
+  .chat-groups {
     height: calc(100vh - 100px);
     border: 0px solid;
     .chat-group {
@@ -63,10 +63,10 @@
   padding: 0 40px;
   height: 100px;
   background-color: #ffffff;
-  border-bottom : 1px solid #eeeeee;
-  .group-info{
+  border-bottom: 1px solid #eeeeee;
+  .group-info {
     float: left;
-    &__groupname{
+    &__groupname {
       padding-top: 35px;
       font-size: 20px;
       color: #333333;
@@ -77,11 +77,12 @@
       color: #999999;
     }
   }
-  .group-edit{
+  .group-edit {
     float: right;
     height:40px;
     padding: 0 20px;
     margin-top: 28px;
+    text-decoration: none;
     line-height: 40px;
     color: #38aef0;
     border: 2px solid #38aef0;
@@ -89,7 +90,7 @@
 }
 .message-view {
   padding: 0 40px;
-  height: calc(100% - (100px + 90px));
+  height: calc(100% - 190px);
   overflow: auto;
   .message{
     padding-top: 40px;
@@ -123,7 +124,7 @@
       padding-left: 10px;
       height: 50px;
       line-height: 50px;
-      width: calc(100% - (205px));
+      width: calc(100% - 205px);
       float: left;
       margin-top: 20px;
       margin-bottom: 20px;
