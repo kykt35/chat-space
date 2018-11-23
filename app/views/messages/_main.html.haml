@@ -1,0 +1,41 @@
+.main
+  .main-header
+    .group-info
+      %h2.group-info__groupname GroupName
+      %p.group-info__members Members: member1 member2
+    = link_to "Edit","#", class: "group-edit"
+  .chat-area
+    %ul.messages
+      %li.message
+        %p.message__username username1
+        %p.message__created-at 2018/11/22 05:33:24
+        %p.message__body text1
+        .message__image
+      %li.message
+        %p.message__username username2
+        %p.message__created-at 2018/11/22 05:33:25
+        %p.message__body  text2
+        .message__image
+      %li.message
+        %p.message__username username3
+        %p.message__created-at 2018/11/22 05:33:25
+        %p.message__body  text3
+        .message__image
+      %li.message
+        %p.message__username username4
+        %p.message__created-at 2018/11/22 05:33:25
+        %p.message__body text4
+        .message__image
+      %li.message
+        %p.message__username username5
+        %p.message__created-at 2018/11/22 05:33:25
+        %p.message__body text5
+        .message__image
+  .footer
+    %form.message-form
+      %textarea.message-form__textarea{placeholder: "type a message", name: "body", cols: "1" }
+      %label.image-upload
+        = fa_icon "picture-o"
+        %input{type: "file", name: "image", style: "display: none"}
+      %input.message-form__button{type: "button", name: "submit",value: "Send"}
+
