@@ -5,7 +5,7 @@
   float: left;
 }
 
-.header {
+.main-header {
   padding: 0 40px;
   height: 100px;
   background-color: $headerBackgroundColor;
@@ -35,7 +35,7 @@
   }
 }
 
-.message-view {
+.chat-area {
   padding: 0 40px;
   height: calc(100% - 190px);
   overflow: auto;
@@ -81,7 +81,7 @@
       margin-left: 40px;
       resize: none;
     }
-    .fa-image {
+    .fa-picture-o {
       position: absolute;
       display: inline-block;
       line-height: 90px;
