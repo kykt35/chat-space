@@ -1,0 +1,25 @@
+.message-view {
+  padding: 0 40px;
+  height: calc(100% - 190px);
+  overflow: auto;
+  background-color: #fafafa;
+  .message{
+    padding-top: 40px;
+    &__username {
+      font-size: 16px;
+      font-weight: bold;
+      color: #434a54;
+      display: inline;
+    }
+    &__created-at {
+      font-size: 12px;
+      color: #999999;
+      display: inline;
+    }
+    &__body {
+      font-size: 14px;
+      color: #434a54;
+      padding-top: 10px;
+    }
+  }
+}
