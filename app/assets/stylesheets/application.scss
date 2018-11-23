@@ -4,11 +4,9 @@
 
 @import "./side";
 @import "./main";
-@import "./header";
-@import "./message-view";
-@import "./footer";
 @import "./flash";
 
 .wrapper {
   min-width: 960px;
+  height: calc(100vh - 20px);
 }

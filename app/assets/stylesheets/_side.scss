@@ -1,9 +1,9 @@
 .side {
   width: 300px;
-  /*height: 100vh;*/
+  height: 100%;
   float: left;
   color: #ffffff;
-  background-color: #2f3e51;
+  background-color: $sideBackgroundColor;
   .user {
     padding:0 20px;
     height: 100px;
@@ -22,10 +22,10 @@
     }
   }
   .chat-groups {
-    height: calc(100vh - 100px);
+    height: calc(100% - 100px);
     border: 0px solid;
     .chat-group {
-      background-color: #2f3e51;
+      background-color: $sideBackgroundColor;
       &:hover{
         background-color: #3b4a60;
       }
