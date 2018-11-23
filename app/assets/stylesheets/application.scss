@@ -89,6 +89,8 @@
 }
 .message-view {
   padding: 0 40px;
+  height: calc(100vh - (100px -90px));
+  overflow: auto;
   .message{
     padding-top: 40px;
     &__username {
@@ -109,7 +111,7 @@
     }
   }
 }
-.footer{
+.footer {
   width: 100%;
   height: 90px;
   position: absolute;
