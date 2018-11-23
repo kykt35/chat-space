@@ -25,6 +25,10 @@
       top: 0;
       right: 165px;
       bottom: 0;
+      &:hover{
+        cursor: pointer;
+        cursor: hand;
+      };
     }
     &__button {
       color: #ffffff;
