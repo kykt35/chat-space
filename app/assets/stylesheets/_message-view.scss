@@ -2,23 +2,23 @@
   padding: 0 40px;
   height: calc(100% - 190px);
   overflow: auto;
-  background-color: #fafafa;
+  background-color: $chatViewBackgroundColor;
   .message{
     padding-top: 40px;
     &__username {
       font-size: 16px;
       font-weight: bold;
-      color: #434a54;
+      color: $chatTextColor;
       display: inline;
     }
     &__created-at {
       font-size: 12px;
-      color: #999999;
+      color: $grayTextColor;
       display: inline;
     }
     &__body {
       font-size: 14px;
-      color: #434a54;
+      color: $chatTextColor;
       padding-top: 10px;
     }
   }
