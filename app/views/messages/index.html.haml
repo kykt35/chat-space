@@ -5,8 +5,6 @@
       %h2.user__name username
       %i.fa.fa-pencil-square-o
       %i.fa.fa-cog
-
-      / %a.user__Edit Edit
     %ul.chat-groups
       %li.chat-group
         %a.chat-group__link{href: "#"}
@@ -41,4 +39,8 @@
     %form.message-form
       %textarea.message-form__textarea{placeholder: "type a message", name: "text", cols: "1" }
       / %a.messageForm__imageIcon
+      %label.image-upload
+        %i.fa.fa-image
+        %input{type: "file", name: "image", style: "display: none"}
       %input.message-form__button{type: "button", name: "submit",value: "Send"}
+
