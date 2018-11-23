@@ -19,11 +19,11 @@
           %p.chat-group__name group3
           %p.chat-group__message message33
   .main
-    .group
+    .header
       .group-info
         %h2.group-info__groupname GroupName
         %p.group-info__members Members: member1 member2
-      %a.group__edit Edit
+      %a.group-edit Edit
     .message-view
       %ul.messages
         %li.message
@@ -36,11 +36,12 @@
           %p.message__created-at 2018/11/22 05:33:25
           %p.message__body texttexttext22
           .message__image
-    %form.message-form
-      %textarea.message-form__textarea{placeholder: "type a message", name: "text", cols: "1" }
-      / %a.messageForm__imageIcon
-      %label.image-upload
-        %i.fa.fa-image
-        %input{type: "file", name: "image", style: "display: none"}
-      %input.message-form__button{type: "button", name: "submit",value: "Send"}
+    .footer
+      %form.message-form
+        %textarea.message-form__textarea{placeholder: "type a message", name: "text", cols: "1" }
+        / %a.messageForm__imageIcon
+        %label.image-upload
+          %i.fa.fa-image
+          %input{type: "file", name: "image", style: "display: none"}
+        %input.message-form__button{type: "button", name: "submit",value: "Send"}
 
