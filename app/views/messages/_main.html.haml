@@ -1,24 +1,27 @@
 .main
   .main-header
     .group-info
-      %h2.group-info__groupname GroupName
+      %h2.group-info__groupname= @group.name
       %p.group-info__members Members: member1 member2
-    = link_to "Edit","#", class: "group-edit"
+    = link_to "Edit", "#", class: "group-edit"
   .chat-area
-    -if @messages.present?
-      -@messages.each do |message|
-        %ul.messages
-          %li.message
-            %p.message__username = message.user.name
-            %p.message__created-at = message.created_at
-            %p.message__body = message.body
-            .message__image
+    -@messeges.each do |message|
+      %ul.messages
+        %li.message
+          %p.message__username
+            = message.user.name
+          %p.message__created-at
+            = message.created_at
+          %p.message__body
+            = message.body
+          .message__image
+            = image_tag message.image.to_s
 
   .footer
     =form_for [@group, @message], html: {class: "message-form"} do |f|
-      %textarea.message-form__textarea{placeholder: "type a message", name: "body", cols: "1" }
-      %label.image-upload
-        = fa_icon "picture-o"
-        %input{type: "file", name: "image", style: "display: none"}
-      %input.message-form__button{type: "button", name: "submit",value: "Send"}
 
+      = f.text_field :body, placeholder: 'type a message',class: "message-form__textarea", cols: "1"
+      = f.label class: "image-upload" do
+        = fa_icon "picture-o", class: 'icon'
+        = f.file_field :image, style: "display: none"
+      = f.submit 'Send', class: "message-form__button"
