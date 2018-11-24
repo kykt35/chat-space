@@ -57,6 +57,7 @@ gem 'devise'
 gem 'haml-rails'
 gem "font-awesome-rails"
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :development do
   gem 'rspec'
