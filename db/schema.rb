@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181124104047) do
+ActiveRecord::Schema.define(version: 20181125102712) do
 
   create_table "group_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "group_id"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20181124104047) do
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "body",       limit: 65535
+    t.text     "content",    limit: 65535
     t.string   "image"
     t.integer  "group_id"
     t.integer  "user_id"
