@@ -1,0 +1,10 @@
+%li.message
+  %p.message__username
+    = message.user.name
+  %p.message__created-at
+    = message.created_at.in_time_zone('Asia/Tokyo').strftime('%Y/%m/%d %H:%M:%S')
+  - if message.body.present?
+    %p.message__body
+      = message.body
+  - if message.image.present?
+    = image_tag message.image.to_s, class: 'message__image'
