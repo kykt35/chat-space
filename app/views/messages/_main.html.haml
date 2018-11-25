@@ -5,17 +5,9 @@
       %p.group-info__members= @group.show_members
     = link_to "Edit", "#", class: "group-edit"
   .chat-area
-    -@messeges.each do |message|
-      %ul.messages
-        %li.message
-          %p.message__username
-            = message.user.name
-          %p.message__created-at
-            = message.created_at
-          %p.message__body
-            = message.body
-          .message__image
-            = image_tag message.image.to_s
+    %ul.messages
+      = render @messeges
+
 
   .footer
     =form_for [@group, @message], html: {class: "message-form"} do |f|
