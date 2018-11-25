@@ -3,7 +3,7 @@
     .group-info
       %h2.group-info__groupname= @group.name
       %p.group-info__members= @group.show_members
-    = link_to "Edit", "#", class: "group-edit"
+    = link_to "Edit", edit_group_path(@group), class: "group-edit"
   .chat-area
     %ul.messages
       = render @messeges
