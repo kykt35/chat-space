@@ -22,7 +22,6 @@ $(function(){
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    console.log("submit");
     var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
@@ -38,7 +37,6 @@ $(function(){
       $('.messages').append(html)
       $('#message_content').val('')
       $(".message-form__button").removeAttr("disabled");
-      console.log(message.user_name);
     })
     .fail(function(){
       $(".message-form__button").removeAttr("disabled");
