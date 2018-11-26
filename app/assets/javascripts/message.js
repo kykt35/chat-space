@@ -1,21 +1,19 @@
 $(function(){
 
   function buildHTML(message){
-    var html = `<li class='message'>
-                  <p class='message__username'>
-                    ${ message.user_name} *
-                  </p>
-                  <p class='message__created-at'>
-                    ${message.created_at}
-                  </p>`
-    if (message.content !==null ) {
-      html = $(html).append( `<p class="message__content">
-                    ${message.content} </p>`)
-    }
-    if (message.image.url !==null){
-      html = $(html).append( `<img class="message__image" src=${message.image.url}  alt=${message.image.alt} />`)
-    }
-    html = $(html).append( `</li>`)
+    var html =$('<li>',{class: 'message'});
+    $(html).append($('<p>',{class: 'message__username',text: message.user_name }));
+    $(html).append($('<p>',{class: 'message__created-at',
+                            text: message.created_at}));
+    var content = $('<p>',{class: 'message__content',
+                            text: message.content});
+    var image = $('<img>',{class:'message__image',
+                          src: message.image.url,
+                          alt: message.image.alt});
+    html = ((message.content !==null ) &&  (message.image.url !==null ))
+      ? $(html).append($(content)).append($(image))
+      : (message.content !==null ) ? $(html).append($(content))
+      : $(html).append($(image))
 
     return html;
   }
@@ -36,10 +34,10 @@ $(function(){
       var html = buildHTML(message);
       $('.messages').append(html)
       $('#message_content').val('')
-      $(".message-form__button").removeAttr("disabled");
+      $(".new_message__button").removeAttr("disabled");
     })
     .fail(function(){
-      $(".message-form__button").removeAttr("disabled");
+      $(".new_message__button").removeAttr("disabled");
       alert('error');
     })
   });
