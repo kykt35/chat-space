@@ -1,4 +1,28 @@
 $(function(){
+
+  function buildHTML(message){
+    var html = `<li class='message'>
+                  <p class='message__username'>
+                    ${ message.user_name} *
+                  </p>
+                  <p class='message__created-at'>
+                    ${message.created_at}
+                  </p>
+                  `
+    if (message.content !==null ) {
+      html=html + `<p class="message__content">
+                    ${message.content}
+                  </p>`
+    }
+    if (message.image.url !==null){
+      html = html + `<img class="message__image" src=${message.image.url}  alt=${message.image.alt} />`
+    }
+    html = html + `</li>`
+
+    return html;
+  }
+
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     console.log("submit");
@@ -13,9 +37,14 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      console.log("done");
+      var html = buildHTML(message);
+      $('.messages').append(html)
+      $('#message_content').val('')
+      $(".message-form__button").removeAttr("disabled");
+      console.log(message.user_name);
     })
     .fail(function(){
+      $(".message-form__button").removeAttr("disabled");
       alert('error');
     })
   });
