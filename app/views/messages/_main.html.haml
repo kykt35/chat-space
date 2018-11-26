@@ -8,9 +8,9 @@
     %ul.messages
       = render @messeges
   .footer
-    =form_for [@group, @message], html: {class: "message-form"} do |f|
-      = f.text_field :content, placeholder: 'type a message',class: "message-form__textarea", cols: "1"
+    =form_for [@group, @message] do |f|
+      = f.text_field :content, placeholder: 'type a message',class: "new_message__textarea", cols: "1"
       =f.label :image, class: 'image-upload' do
         = fa_icon "picture-o", class: 'icon'
         = f.file_field :image, style: "display: none"
-      = f.submit 'Send', class: "message-form__button"
+      = f.submit 'Send' , class: "new_message__button"
