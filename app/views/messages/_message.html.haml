@@ -2,7 +2,7 @@
   %p.message__username
     = message.user.name
   %p.message__created-at
-    = message.created_at.in_time_zone('Asia/Tokyo').strftime('%Y/%m/%d %H:%M:%S')
+    = message.strp_created_at
   - if message.content.present?
     %p.message__content
       = message.content
