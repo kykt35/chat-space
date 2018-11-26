@@ -7,6 +7,6 @@ class Message < ApplicationRecord
 
   #作成日の表示形式を整形
   def strp_created_at
-    self.created_at.in_time_zone('Asia/Tokyo').strftime('%Y/%m/%d %H:%M:%S')
+    created_at.in_time_zone('Asia/Tokyo').strftime('%Y/%m/%d %H:%M:%S')
   end
 end
