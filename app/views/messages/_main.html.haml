@@ -7,13 +7,9 @@
   .chat-area
     %ul.messages
       = render @messeges
-
-
   .footer
     =form_for [@group, @message], html: {class: "message-form"} do |f|
-
       = f.text_field :content, placeholder: 'type a message',class: "message-form__textarea", cols: "1"
-      / %label.image-upload{for: "upload-icon"}
       =f.label :image, class: 'image-upload' do
         = fa_icon "picture-o", class: 'icon'
         = f.file_field :image, style: "display: none"
