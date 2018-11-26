@@ -7,21 +7,18 @@ $(function(){
                   </p>
                   <p class='message__created-at'>
                     ${message.created_at}
-                  </p>
-                  `
-    if (message.content !==null ) {
-      html=html + `<p class="message__content">
-                    ${message.content}
                   </p>`
+    if (message.content !==null ) {
+      html = $(html).append( `<p class="message__content">
+                    ${message.content} </p>`)
     }
     if (message.image.url !==null){
-      html = html + `<img class="message__image" src=${message.image.url}  alt=${message.image.alt} />`
+      html = $(html).append( `<img class="message__image" src=${message.image.url}  alt=${message.image.alt} />`)
     }
-    html = html + `</li>`
+    html = $(html).append( `</li>`)
 
     return html;
   }
-
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
