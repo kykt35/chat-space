@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = Use.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
   end
 
   private
