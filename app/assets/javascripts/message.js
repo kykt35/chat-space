@@ -1,7 +1,43 @@
 $(function(){
+//todo ページ遷移対応
+  console.log("timer start");
+  var updateTimer = setInterval(function(){updateMessages()},5000);
+
+  function updateMessages(){
+    console.log("updateing");
+    var last_message_id= ($('.message').length !== 0)
+                        ? $('.message:last').attr('message-id')
+                        : 0;
+
+    $.ajax({
+      type: "GET",
+      url: location.href,
+      data: {message: {id: last_message_id}},
+      dataType: 'json',
+      processData: true,
+      contentType: false,
+      timeout: 10000
+    })
+    .done(function(messages){
+      console.log("done");
+      console.log(messages.length );
+      var html = "";
+      if (messages.length !==0){
+        messages.forEach(function(message){
+          var html =  buildHTML(message);
+          $('.messages').append(html)
+        });
+      }
+
+    })
+    .fail(function(){
+      console.log('error');
+      clearInterval(updateTimer);
+    })
+  }
 
   function buildHTML(message){
-    var html =$('<li>',{class: 'message'});
+    var html =$('<li>',{class: 'message', "message-id": message.id});
     $(html).append($('<p>',{class: 'message__username',text: message.user_name }));
     $(html).append($('<p>',{class: 'message__created-at',
                             text: message.created_at}));
