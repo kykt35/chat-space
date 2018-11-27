@@ -9,10 +9,14 @@ $(function(){
     $('#user-search-result').append(html);
   }
 
+  $('#user-search-result').on("click",".user-search-add",function(){
+    var id =  $(this).attr("data-user-id");
+    console.log(id);
+  });
+
   $('#user-search-field').on("keyup", function(){
     var input = $('#user-search-field').val();
     var inputs = input.split(" ").filter(function(e) { return e; });
-    // if (input.length !== 0 )
     if (inputs != preInputs){
       $search_result.empty();
       if (inputs.length !== 0 ){
