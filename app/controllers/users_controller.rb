@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def edit
-
   end
 
   def update
@@ -10,6 +9,10 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def index
+    @users = User.where.not(id: current_user.id).where('name LIKE(?)', "%#{params[:keyword]}%")
   end
 
   private
