@@ -15,7 +15,6 @@ $(function(){
       <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
     </div>`
     $('#chat-group-users').append(html);
-    console.log("append group user:"+user.id);
   }
 
   $('#user-search-result').on("click",".user-search-add",function(){
