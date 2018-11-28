@@ -22,8 +22,11 @@
       color: #ffffff;
     }
   }
-  .chat-groups {
+  .side-menu {
     height: calc(100% - 100px);
+    overflow: scroll;
+  }
+  .chat-groups {
     border: 0px solid;
     .chat-group {
       background-color: $sideBackgroundColor;
