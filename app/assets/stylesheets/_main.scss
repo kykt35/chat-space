@@ -60,6 +60,10 @@
       color: $chatTextColor;
       padding-top: 10px;
     }
+    &__image {
+      max-width: 300px;
+      height: auto;
+    }
   }
 }
 
