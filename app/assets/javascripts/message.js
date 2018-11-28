@@ -28,10 +28,9 @@ $(function(){
       if (messages.length !==0){
         messages.forEach(function(message){
           var html =  buildHTML(message);
-          $('.messages').append(html)
+          $('.messages').prepend(html)
         });
       }
-
     })
     .fail(function(){
       console.log('error');
@@ -42,18 +41,22 @@ $(function(){
 
   function buildHTML(message){
     var html =$('<li>',{class: 'message', "message-id": message.id});
-    $(html).append($('<p>',{class: 'message__username',text: message.user_name }));
-    $(html).append($('<p>',{class: 'message__created-at',
+    var message_upper =$('<div>',{class: 'message_upper clearfix'});
+    $(message_upper).append($('<p>',{class: 'message__username',text: message.user_name }));
+    $(message_upper).append($('<p>',{class: 'message__created-at',
                             text: message.created_at}));
+    $(html).append(message_upper);
+    var message_bottom =$('<div>',{class: 'message_bottom clearfix'});
     var content = $('<p>',{class: 'message__content',
                             text: message.content});
     var image = $('<img>',{class:'message__image',
                           src: message.image.url,
                           alt: message.image.alt});
-    html = ((message.content !==null ) &&  (message.image.url !==null ))
-      ? $(html).append($(content)).append($(image))
-      : (message.content !==null ) ? $(html).append($(content))
-      : $(html).append($(image))
+    message_bottom = ((message.content !==null ) &&  (message.image.url !==null ))
+      ? $(message_bottom).append($(content)).append($(image))
+      : (message.content !==null ) ? $(message_bottom).append($(content))
+      : $(message_bottom).append($(image))
+    $(html).append(message_bottom);
 
     return html;
   }
@@ -72,7 +75,7 @@ $(function(){
     })
     .done(function(message){
       var html = buildHTML(message);
-      $('.messages').append(html)
+      $('.messages').prepend(html)
       $('#message_content').val('')
       $(".new_message__button").removeAttr("disabled");
     })
