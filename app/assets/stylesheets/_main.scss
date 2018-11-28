@@ -46,12 +46,14 @@
       font-size: 16px;
       font-weight: bold;
       color: $chatTextColor;
-      display: inline;
+      margin-right: 5px;
+      float:left;
     }
     &__created-at {
       font-size: 12px;
+      line-height: 16px;
       color: $grayTextColor;
-      display: inline;
+      float: left;
     }
     &__content {
       font-size: 14px;

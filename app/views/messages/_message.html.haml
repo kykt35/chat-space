@@ -1,11 +1,13 @@
 %li.message{"message-id": message.id}
-  %p.message__username
-    = message.user.name
-  %p.message__created-at
-    = message.strp_created_at
-  - if message.content.present?
-    %p.message__content
-      = message.content
-  - if message.image.present?
-    .message__image
-      = image_tag message.image.to_s, class: 'message__image'
+  .message__upper.clearfix
+    %p.message__username
+      = message.user.name
+    %p.message__created-at
+      = message.strp_created_at
+  .message__bottom.clearfix
+    - if message.content.present?
+      %p.message__content
+        = message.content
+    - if message.image.present?
+      .message__image
+        = image_tag message.image.to_s, class: 'message__image'
