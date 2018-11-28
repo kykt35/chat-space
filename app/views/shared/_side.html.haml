@@ -4,16 +4,16 @@
       = current_user.name
     %ul.header__lists
       %li.list
-        = link_to(edit_user_path(current_user), class: "icon") do
+        = link_to(edit_user_path(current_user), class: "icon",data: {"turbolinks"=>false}) do
           = fa_icon "cog"
       %li.list
-        = link_to(new_group_path , class: "icon") do
+        = link_to(new_group_path , class: "icon",data: {"turbolinks"=>false}) do
           = fa_icon "pencil-square-o"
   .side-menu
     %ul.chat-groups
       -current_user.groups.each do |group|
         %li.chat-group
-          = link_to(group_messages_path(group),class: "chat-group__link") do
+          = link_to(group_messages_path(group),class: "chat-group__link",data: {"turbolinks"=>false}) do
             %p.chat-group__name= group.name
             %p.chat-group__message
               = group.show_last_message
