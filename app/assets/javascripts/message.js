@@ -9,9 +9,17 @@ $(function(){
    }
 
   function updateMessages(){
-    console.log("update messages");
+
+    if ($('.message').length !== 0){
+      var last_message_id = $('.message:first').attr('message-id');
+      var last_message = $('.message:first');
+    } else {
+      var last_message_id = 0;
+      var last_message = null;
+    }
+
     var last_message_id= ($('.message').length !== 0)
-                        ? $('.message:last').attr('message-id')
+                        ? $('.message:first').attr('message-id')
                         : 0;
     $.ajax({
       type: "GET",
@@ -23,17 +31,20 @@ $(function(){
       timeout: 10000
     })
     .done(function(messages){
-      console.log("done");
-      var html = "";
       if (messages.length !==0){
         messages.forEach(function(message){
           var html =  buildHTML(message);
-          $('.messages').prepend(html)
+          if ($('.message').length !== 0) {
+            $(html).insertBefore(last_message);
+            last_message = $(`.message[message-id= ${message.id}]`)
+          }else {
+            $('.messages').prepend(html);
+            last_message = $(`.message[message-id= ${message.id}]`)
+          }
         });
       }
     })
     .fail(function(){
-      console.log('error');
       clearInterval(updateTimer);
       alert('サーバーとの通信に失敗しました');
     })
