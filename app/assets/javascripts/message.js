@@ -1,14 +1,18 @@
 $(function(){
-//todo ページ遷移対応
-  console.log("timer start");
-  var updateTimer = setInterval(function(){updateMessages()},5000);
+
+  var updateTimer = setInterval(function(){update()},5000);
+
+  function update(){
+    if ($('.chat-area').length !== 0 ){
+      updateMessages();
+    }
+   }
 
   function updateMessages(){
-    console.log("updateing");
+    console.log("update messages");
     var last_message_id= ($('.message').length !== 0)
                         ? $('.message:last').attr('message-id')
                         : 0;
-
     $.ajax({
       type: "GET",
       url: location.href,
@@ -20,7 +24,6 @@ $(function(){
     })
     .done(function(messages){
       console.log("done");
-      console.log(messages.length );
       var html = "";
       if (messages.length !==0){
         messages.forEach(function(message){
@@ -33,6 +36,7 @@ $(function(){
     .fail(function(){
       console.log('error');
       clearInterval(updateTimer);
+      alert('サーバーとの通信に失敗しました');
     })
   }
 
