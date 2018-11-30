@@ -28,10 +28,10 @@ $(function(){
       dataType: 'json',
       processData: true,
       contentType: false,
-      timeout: 10000
+      timeout: 60000
     })
     .done(function(messages){
-      if (messages.length !==0){
+      if ((messages.length !==0)&&($(".new_message__button").attr("disabled") !== 0)){
         messages.forEach(function(message){
           var html =  buildHTML(message);
           if ($('.message').length !== 0) {
