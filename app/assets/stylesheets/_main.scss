@@ -107,6 +107,9 @@
       margin: 20px 40px 20px 0px;
       padding:0 20px;
       float: right;
+      &:disabled {
+        background-color: darkgray;
+      }
     }
   }
 }
