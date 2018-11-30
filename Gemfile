@@ -81,6 +81,9 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-nav'
 end
 
 gem 'fog-aws'
