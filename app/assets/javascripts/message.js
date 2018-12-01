@@ -44,6 +44,7 @@ $(function(){
             $(img).attr('src', message.image_url);
           }
         });
+        scrollDown();
       }
     })
     .fail(function(){
