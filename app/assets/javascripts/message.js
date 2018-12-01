@@ -57,10 +57,10 @@ $(function(){
         </div>`;
     var image =
         `<div class="message__image">
-          <img class="message__image_img" src=${message.image_url} alt=${message.image_alt}>
+          <img class="message__image__img" src=${message.image_url} alt=${message.image_alt}>
         </div>`;
     $(html).append(message_upper);
-    message_bottom = ((message.content !==null ) &&  (message.image.url !==null ))
+    message_bottom = ((message.content !==null ) &&  (message.image_url !==null ))
       ? $(message_bottom).append($(content)).append($(image))
       : (message.content !==null ) ? $(message_bottom).append($(content))
       : $(message_bottom).append($(image))
@@ -101,7 +101,8 @@ $(function(){
     })
     .done(function(message){
       addMessageToChatArea(message);
-      $('#message_content').val('')
+      $('#message_content').val('');
+      $('#message_image').val('');
       $(".new_message__button").removeAttr("disabled");
     })
     .fail(function(){
