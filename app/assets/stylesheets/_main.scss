@@ -36,12 +36,15 @@
 }
 
 .chat-area {
-  padding: 0 40px;
   height: calc(100% - 190px);
   overflow: auto;
   background-color: $chatViewBackgroundColor;
+  .messages {
+    padding: 20px 40px 20px;
+  }
   .message{
-    padding-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     &__username {
       font-size: 16px;
       font-weight: bold;
