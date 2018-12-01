@@ -1,8 +1,9 @@
 $(function(){
   $(window).on("load",function(){
-      var updateTimer = setInterval(function(){update()},5000);
+    var updateTimer = setInterval(function(){update()},5000);
+    if ($('.chat-area').length !== 0 ){
       $('.chat-area').scrollTop($('.chat-area')[0].scrollHeight);
-      console.log("scroll00");
+    }
   });
 
   function update(){
@@ -74,15 +75,14 @@ $(function(){
       : $(message_bottom).append($(image))
     $(html).append(message_bottom);
 
-
     return html;
   }
 
   function addMessageToChatArea(message, imgloader){
     var $messages = $('.message');
-    var message_ids = $messages.map(function(i, element){
-      return parseInt($(element).attr('message-id'))
-    }).toArray();
+    var message_ids = $messages.map(function(){
+      return parseInt($(this).attr('message-id'))
+    }).get();
     if (message_ids.includes(message.id) !== true) { //メッセージがすでにある場合はスキップ
       var html =  buildHTML(message);
       if (message_ids.length == 0){
