@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messeges = @group.messages.includes(:user).order('created_at DESC')
+    @messeges = @group.messages.includes(:user)
     respond_to do |format|
       format.html
       format.json {
@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
         format.json
       end
     else
-      @messeges = @group.messages.includes(:user).order('created_at DESC')
+      @messeges = @group.messages.includes(:user)
       flash.now[:alert] = "メッセージを入力してください"
       render :index
     end

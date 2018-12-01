@@ -11,15 +11,15 @@ $(function(){
   function updateMessages(){
 
     if ($('.message').length !== 0){
-      var last_message_id = $('.message:first').attr('message-id');
-      var last_message = $('.message:first');
+      var last_message_id = $('.message:last').attr('message-id');
+      var last_message = $('.message:last');
     } else {
       var last_message_id = 0;
       var last_message = null;
     }
 
     var last_message_id= ($('.message').length !== 0)
-                        ? $('.message:first').attr('message-id')
+                        ? $('.message:last').attr('message-id')
                         : 0;
     $.ajax({
       type: "GET",
@@ -77,11 +77,11 @@ $(function(){
     if (message_ids.includes(message.id) !== true) { //メッセージがすでにある場合はスキップ
       var html =  buildHTML(message);
       if (message_ids.length == 0){
-        $message.parent().prepend(html);
+        $message.parent().append(html);
       } else {
         last_message_id = message_ids.find(function(id){return id < message.id})
         last_message = $(`.message[message-id= ${last_message_id}]`);
-        $(html).insertBefore(last_message);
+        $(html).insertAfter(last_message);
       }
     }
   }
