@@ -41,8 +41,13 @@ $(function(){
           })
           .done(function(users){
             if (users.length !== 0){
+              var group_users = $('.chat-group-user__name').map(function(){
+                return $(this).text()
+              }).get();
               users.forEach(function(user){
-                appendSearchUser(user);
+                if (!(group_users.includes(user.name))){
+                  appendSearchUser(user);
+                }
               });
             }
           })
