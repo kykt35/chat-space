@@ -80,7 +80,6 @@ $(function(){
         $message.parent().prepend(html);
       } else {
         last_message_id = message_ids.find(function(id){return id < message.id})
-        console.log("last_message_id: " + last_message_id);
         last_message = $(`.message[message-id= ${last_message_id}]`);
         $(html).insertBefore(last_message);
       }
